@@ -1,3 +1,5 @@
+const defaultTheme = require('tailwindcss/defaultTheme');
+
 module.exports = {
   future: {
     removeDeprecatedGapUtilities: true,
@@ -5,8 +7,15 @@ module.exports = {
   },
   purge: ['./src/**/*.js'],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        sans: ['Inter var', ...defaultTheme.fontFamily.sans],
+      },
+    },
   },
-  variants: {},
-  plugins: [],
+  variants: {
+    backgroundColor: ({ after }) => after(['disabled']),
+    cursor: ({ after }) => after(['disabled']),
+  },
+  plugins: [require('@tailwindcss/ui')],
 };
