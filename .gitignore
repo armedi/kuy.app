@@ -4,3 +4,12 @@ npm-debug.log
 
 # Local Netlify folder
 .netlify
+
+# build folder
+/build/
+
+# bucklescript files
+.merlin
+.bsb.lock
+/lib/bs/
+/**/*.bs.js
