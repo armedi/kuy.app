@@ -15,7 +15,6 @@ let make = (~submitLink: string => unit, ~loading: bool=false, ()) => {
   let handleSubmit = event => {
     ReactEvent.Form.preventDefault(event);
     submitLink(input);
-    setInput(_ => "");
   };
 
   <form
